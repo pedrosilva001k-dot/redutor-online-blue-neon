@@ -1,0 +1,48 @@
+html = r'''<!doctype html>
+
+<html lang="pt-BR">  
+<head>  
+<meta charset="utf-8">  
+<meta name="viewport" content="width=device-width,initial-scale=1">  
+<title>REDUTOR ONLINE — Blue Neon</title>  
+<style>  
+:root{--bg:#070d19;--panel:#0c1729;--blue:#25baff;--cyan:#76dcff;--muted:#8ba7bd}  
+*{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(circle at 50% 15%,#102c49,#050914 60%);font-family:Arial,sans-serif;color:#eef8ff;display:grid;place-items:center}  
+.phone{width:min(390px,94vw);min-height:690px;border:1px solid #174c70;border-radius:30px;padding:22px 18px;background:linear-gradient(160deg,#0c1b30,#070d19 70%);box-shadow:0 0 35px #008bd533}  
+.top{display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--cyan);letter-spacing:2px}  
+h1{text-align:center;font-size:27px;letter-spacing:2px;margin:28px 0 4px;color:var(--blue);text-shadow:0 0 18px #19aaff88}  
+.sub{text-align:center;color:var(--muted);font-size:10px;letter-spacing:3px;margin-bottom:26px}  
+.section{font-size:10px;color:#6fbfe8;letter-spacing:2px;margin:18px 0 9px}  
+.item{display:flex;align-items:center;justify-content:space-between;background:#0c2036;border:1px solid #16476a;border-radius:13px;padding:14px;margin:9px 0}  
+.name{font-weight:700;font-size:13px}.desc{font-size:10px;color:var(--muted);margin-top:4px}  
+.switch{width:43px;height:24px;border:0;border-radius:20px;background:#294055;position:relative;cursor:pointer}  
+.switch:after{content:"";position:absolute;width:18px;height:18px;top:3px;left:3px;border-radius:50%;background:#a8bdcc;transition:.2s}  
+.switch.on{background:#087db8;box-shadow:0 0 12px #1bbaff66}.switch.on:after{left:22px;background:white}  
+.note{border:1px solid #17466a;background:#091629;border-radius:12px;padding:12px;color:#9db8ca;font-size:10px;line-height:1.5;margin-top:18px}  
+.float{position:fixed;right:16px;bottom:18px;border:1px solid #53ceff;background:#09223a;color:#7cddff;border-radius:50%;width:54px;height:54px;font-size:22px;box-shadow:0 0 20px #00aaff66;cursor:pointer}  
+.target{height:116px;display:grid;place-items:center;border-radius:14px;background:radial-gradient(circle,#102b43,#091425);border:1px solid #16476a}  
+.circle{width:82px;height:82px;border:1.5px solid #39c5ff;border-radius:50%;box-shadow:0 0 15px #18aaff55;position:relative}  
+.circle:before,.circle:after{content:"";position:absolute;background:#39c5ff}.circle:before{width:1px;height:108px;left:39px;top:-14px}.circle:after{height:1px;width:108px;top:39px;left:-14px}  
+.hidden{display:none}  
+footer{text-align:center;color:#58758d;font-size:9px;margin-top:22px}  
+</style>  
+</head>  
+<body>  
+<main class="phone" id="panel">  
+ <div class="top"><span>● REDUTOR ONLINE</span><span>BLUE NEON</span></div>  
+ <h1>MOD MENU</h1><div class="sub">PAINEL DEMONSTRATIVO</div>  
+ <div class="section">CONTROLES VISUAIS</div>  
+ <div class="item"><div><div class="name">ESP — INDICADOR</div><div class="desc">Demonstração visual, sem leitura do jogo</div></div><button class="switch" aria-label="Alternar ESP"></button></div>  
+ <div class="item"><div><div class="name">NO RECOIL — SIMULAÇÃO</div><div class="desc">Apenas controle demonstrativo</div></div><button class="switch" aria-label="Alternar No Recoil"></button></div>  
+ <div class="item"><div><div class="name">AIM LOCK — DEMO</div><div class="desc">Não controla nem move a mira do jogo</div></div><button class="switch" aria-label="Alternar Aim Lock"></button></div>  
+ <div class="section">MARCADOR CENTRAL</div>  
+ <div class="target"><div class="circle"></div></div>  
+ <div class="note">Este protótipo mostra a aparência do menu, botões e marcador central. Não injeta código, não altera o jogo e não oferece ESP ou mira automática reais.</div>  
+ <footer>BLUE NEON EDITION • PROTÓTIPO DE INTERFACE</footer>  
+</main>  
+<button class="float" id="toggle" title="Mostrar/ocultar painel">≡</button>  
+<script>  
+document.querySelectorAll('.switch').forEach(b=>b.addEventListener('click',()=>b.classList.toggle('on')));  
+document.getElementById('toggle').addEventListener('click',()=>document.getElementById('panel').classList.toggle('hidden'));  
+</script>  
+</body></html>
